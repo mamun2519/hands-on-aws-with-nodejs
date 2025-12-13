@@ -11,6 +11,9 @@ app.use(
     origin: "*",
   })
 );
+
+// api routes here
+
 // Health check endpoint
 app.get("/health", (req: Request, res: Response) => {
   res.send("Hello, World!");
