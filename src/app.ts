@@ -1,6 +1,7 @@
 import type { Application, Request, Response } from "express";
 import express from "express";
 import cors from "cors";
+import { ApplicationRootRoute } from "./route";
 const app: Application = express();
 
 // middleware--------
@@ -13,7 +14,7 @@ app.use(
 );
 
 // api routes here
-
+app.use("/api", ApplicationRootRoute);
 // Health check endpoint
 app.get("/health", (req: Request, res: Response) => {
   res.send("Hello, World!");
