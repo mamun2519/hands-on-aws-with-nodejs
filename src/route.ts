@@ -5,6 +5,11 @@ const router = express.Router();
 const moduleRoutes = [
   {
     path: "/sample",
-    router: "sampleRouter",
+    route: "sampleRouter",
   },
 ];
+
+moduleRoutes.forEach((route) => router.use(route.path, route.route));
+
+router.use(notFoundAPI);
+export const ApplicationRootRoute = router;
