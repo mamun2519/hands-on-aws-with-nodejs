@@ -1,11 +1,12 @@
 import express from "express";
+import { S3Route } from "./aws-services/s3/route";
 
 const router = express.Router();
 
 const moduleRoutes = [
   {
-    path: "/sample",
-    route: "sampleRouter",
+    path: "/aws/s3",
+    route: S3Route,
   },
 ];
 
