@@ -1,7 +1,7 @@
 import app from "./app";
 
 const bootstrap = async (): Promise<void> => {
-  const server = app.listen(3000, () => {
+  const server = app.listen(config, () => {
     console.log("Server is running on http://localhost:3000");
   });
 
