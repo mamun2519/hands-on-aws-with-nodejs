@@ -1,8 +1,8 @@
 import app from "./app";
-import config from "./.config";
+import config from "./config";
 const bootstrap = async (): Promise<void> => {
-  const server = app.listen(config, () => {
-    console.log("Server is running on http://localhost:3000");
+  const server = app.listen(config.port, () => {
+    console.log("Server is running on port", config.port);
   });
 
   process.on("SIGINT", () => {
