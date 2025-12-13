@@ -1,5 +1,5 @@
 import express from "express";
-import { S3Route } from "./aws-services/s3/route";
+import { S3Route } from "./aws-services/S3/route";
 
 const router = express.Router();
 
