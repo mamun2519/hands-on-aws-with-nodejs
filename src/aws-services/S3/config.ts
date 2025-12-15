@@ -7,3 +7,5 @@ const s3 = new AWS.S3({
   secretAccessKey: config.aws.s3.secretAccessKey,
   region: config.aws.s3.region,
 });
+
+export default s3;
