@@ -9,3 +9,7 @@ const getAllS3Files = async () => {
   console.log("S3 Files:", result);
   return result;
 };
+
+export const S3Service = {
+  getAllS3Files,
+};
