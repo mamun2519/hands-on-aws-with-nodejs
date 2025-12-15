@@ -5,5 +5,7 @@ const getAllS3Files = async () => {
   const params = {
     Bucket: config.aws.s3.s3BucketName ?? "",
   };
-  const result = await s3.listObjectsV2(params);
+  const result = s3.listObjectsV2(params);
+  console.log("S3 Files:", result);
+  return result;
 };
