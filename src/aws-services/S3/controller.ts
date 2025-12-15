@@ -9,3 +9,7 @@ const getAllS3Files = async (req: Request, res: Response) => {
     data: result,
   });
 };
+
+export const S3Controller = {
+  getAllS3Files,
+};
