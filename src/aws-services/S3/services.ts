@@ -7,7 +7,10 @@ const getAllFilesFormS3Bucket = async () => {
   };
   const result = s3.listObjectsV2(params).promise();
 
-  return result;
+  return {
+    s3Information: result,
+    bucketUrl: config.aws.s3.bucketUrl,
+  };
 };
 
 const getSingleFileFromS3Bucket = async (key: string) => {
