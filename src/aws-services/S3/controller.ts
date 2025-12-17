@@ -10,6 +10,15 @@ const getAllS3Files = async (req: Request, res: Response) => {
   });
 };
 
+const getSingleS3File = async (req: Request, res: Response) => {
+  const { key } = req.params;
+  const result = await S3Service.getSingleFileFromS3Bucket(key);
+
+  res.status(200).json({
+    message: "S3 File fetched successfully",
+    data: result,
+  });
+};
 export const S3Controller = {
   getAllS3Files,
 };
