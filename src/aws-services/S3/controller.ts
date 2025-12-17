@@ -19,6 +19,23 @@ const getSingleS3File = async (req: Request, res: Response) => {
     data: result,
   });
 };
+
+const uploadS3File = async (req: Request, res: Response) => {
+  const { key } = req.params;
+  const body = req.file?.buffer;
+
+  if (!body) {
+    return res.status(400).json({ message: "File is required" });
+  }
+
+  const result = await S3Service.uploadFileToS3Bucket(key, body);
+
+  res.status(200).json({
+    message: "File uploaded successfully",
+    data: result,
+  });
+};
 export const S3Controller = {
   getAllS3Files,
+  getSingleS3File,
 };
