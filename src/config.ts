@@ -13,6 +13,7 @@ export default {
       secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
       region: process.env.AWS_REGION,
       s3BucketName: process.env.S3_BUCKET_NAME,
+      bucketUrl: process.env.BUCKET_URL,
     },
   },
 };
