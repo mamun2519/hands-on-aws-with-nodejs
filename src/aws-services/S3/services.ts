@@ -43,4 +43,7 @@ const deleteFileFromS3Bucket = async (key: string) => {
 
 export const S3Service = {
   getAllFilesFormS3Bucket,
+  getSingleFileFromS3Bucket,
+  uploadFileToS3Bucket,
+  deleteFileFromS3Bucket,
 };
