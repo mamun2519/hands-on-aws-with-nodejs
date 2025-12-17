@@ -32,6 +32,15 @@ const uploadFileToS3Bucket = async (
   return result;
 };
 
+const deleteFileFromS3Bucket = async (key: string) => {
+  const params = {
+    Bucket: config.aws.s3.s3BucketName ?? "",
+    Key: key,
+  };
+  const result = s3.deleteObject(params).promise();
+  return result;
+};
+
 export const S3Service = {
   getAllFilesFormS3Bucket,
 };
