@@ -19,6 +19,19 @@ const getSingleFileFromS3Bucket = async (key: string) => {
   return result;
 };
 
+const uploadFileToS3Bucket = async (
+  key: string,
+  body: Buffer | Uint8Array | Blob | string
+) => {
+  const params = {
+    Bucket: config.aws.s3.s3BucketName ?? "",
+    Key: key,
+    Body: body,
+  };
+  const result = s3.upload(params).promise();
+  return result;
+};
+
 export const S3Service = {
   getAllFilesFormS3Bucket,
 };
