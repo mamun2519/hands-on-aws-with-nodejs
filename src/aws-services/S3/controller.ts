@@ -60,4 +60,5 @@ export const S3Controller = {
   getSingleS3File,
   uploadS3File,
   deleteS3File,
+  generatePresignedUrl,
 };
