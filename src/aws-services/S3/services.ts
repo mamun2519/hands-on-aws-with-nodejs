@@ -65,4 +65,5 @@ export const S3Service = {
   getSingleFileFromS3Bucket,
   uploadFileToS3Bucket,
   deleteFileFromS3Bucket,
+  generatePresignedUrl,
 };

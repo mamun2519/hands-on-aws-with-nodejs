@@ -45,6 +45,16 @@ const deleteS3File = async (req: Request, res: Response) => {
     data: result,
   });
 };
+
+const generatePresignedUrl = async (req: Request, res: Response) => {
+  const { key } = req.params;
+  const result = await S3Service.generatePresignedUrl(key);
+
+  res.status(200).json({
+    message: "Presigned URL generated successfully",
+    data: result,
+  });
+};
 export const S3Controller = {
   getAllS3Files,
   getSingleS3File,
