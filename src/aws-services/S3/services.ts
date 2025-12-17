@@ -48,7 +48,7 @@ const deleteFileFromS3Bucket = async (key: string) => {
   return result;
 };
 
-// if need one time image view liink generation
+// if need one time image view link generation
 const generatePresignedUrl = (key: string) => {
   const params = {
     Bucket: config.aws.s3.s3BucketName ?? "",
