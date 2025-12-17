@@ -20,7 +20,7 @@ const getSingleFileFromS3Bucket = async (key: string) => {
     Bucket: config.aws.s3.s3BucketName ?? "",
     Key: key,
   };
-  const result = s3.getObject(params).promise();
+  const result = await s3.getObject(params).promise();
   return result;
 };
 
