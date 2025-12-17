@@ -49,14 +49,14 @@ const deleteFileFromS3Bucket = async (key: string) => {
 };
 
 // if need one time image view link generation
-const generatePresignedUrl = (key: string) => {
+const generatePresignedUrl = async (key: string) => {
   const params = {
     Bucket: config.aws.s3.s3BucketName ?? "",
     Key: key,
     Expires: 60 * 2, // URL expiration time in seconds
   };
 
-  const result = s3.getSignedUrl("getObject", params);
+  const result = await s3.getSignedUrl("getObject", params);
 };
 
 export const S3Service = {
