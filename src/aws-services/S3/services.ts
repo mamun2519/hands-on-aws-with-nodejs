@@ -10,7 +10,14 @@ const getAllS3Files = async () => {
   return result;
 };
 
-const getSingleFileFromS3Bucket = async (key: string) => {};
+const getSingleFileFromS3Bucket = async (key: string) => {
+  const params = {
+    Bucket: config.aws.s3.s3BucketName ?? "",
+    Key: key,
+  };
+  const result = s3.getObject(params).promise();
+  return result;
+};
 
 export const S3Service = {
   getAllS3Files,
