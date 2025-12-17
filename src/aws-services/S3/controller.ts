@@ -48,4 +48,6 @@ const deleteS3File = async (req: Request, res: Response) => {
 export const S3Controller = {
   getAllS3Files,
   getSingleS3File,
+  uploadS3File,
+  deleteS3File,
 };
