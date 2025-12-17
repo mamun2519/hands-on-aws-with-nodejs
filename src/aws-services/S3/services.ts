@@ -9,7 +9,9 @@ const getAllFilesFormS3Bucket = async () => {
 
   return {
     s3Information: result,
-    bucketUrl: config.aws.s3.bucketUrl,
+    bucketUrl: result.Contents?.map((item) => {
+      return `${config.aws.s3.bucketUrl}/${item.Key}`;
+    }),
   };
 };
 
