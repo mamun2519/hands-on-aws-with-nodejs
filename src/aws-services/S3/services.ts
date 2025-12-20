@@ -38,4 +38,14 @@ const uploadFileToS3Bucket = async (
   return result;
 };
 
+const deleteFileFromS3Bucket = async (key: string) => {
+  const params = {
+    Bucket: config.aws.s3.s3BucketName ?? "",
+    Key: key,
+  };
+
+  const result = await s3.deleteObject(params).promise();
+  return result;
+};
+
 // if need one time image view link generation
