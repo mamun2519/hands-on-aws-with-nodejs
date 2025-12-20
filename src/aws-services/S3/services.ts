@@ -59,9 +59,3 @@ const generatePresignedUrl = async (key: string) => {
   const result = await s3.getSignedUrl("getObject", params);
   return result;
 };
-
-export const S3Service = {
-  getAllFilesFormS3Bucket,
-  getSingleFileFromS3Bucket,
-  uploadFileToS3Bucket,
- 
