@@ -33,7 +33,9 @@ const uploadFileToS3Bucket = async (
     Bucket: config.aws.s3.s3BucketName ?? "",
     Key: key,
     Body: body,
- 
+  };
+  const result = s3.upload(params).promise();
+  return result;
 };
 
 // if need one time image view link generation
