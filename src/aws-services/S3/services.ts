@@ -15,6 +15,11 @@ const getAllFilesFormS3Bucket = async () => {
   };
 };
 
-const getSingleFileFromS3Bucket = async (key: string) => {};
+const getSingleFileFromS3Bucket = async (key: string) => {
+  const params = {
+    Bucket: config.aws.s3.s3BucketName ?? "",
+    Key: key,
+
+};
 
 // if need one time image view link generation
