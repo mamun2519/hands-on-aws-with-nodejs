@@ -25,9 +25,4 @@ const getSingleFileFromS3Bucket = async (key: string) => {
   return result;
 };
 
-const uploadFileToS3Bucket = async (
-  key: string,
-  body: Buffer | Uint8Array | Blob | string
-) => {};
-
 // if need one time image view link generation
