@@ -28,12 +28,6 @@ const getSingleFileFromS3Bucket = async (key: string) => {
 const uploadFileToS3Bucket = async (
   key: string,
   body: Buffer | Uint8Array | Blob | string
-) => {
-  const params = {
-    Bucket: config.aws.s3.s3BucketName ?? "",
-    Key: key,
-    Body: body,
- 
-};
+) => {};
 
 // if need one time image view link generation
