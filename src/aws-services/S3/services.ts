@@ -55,4 +55,7 @@ const generatePresignedUrl = async (key: string) => {
     Key: key,
     Expires: 60 * 2, // URL expiration time in seconds
   };
+
+  const result = await s3.getSignedUrl("getObject", params);
+  return result;
 };
