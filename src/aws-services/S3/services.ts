@@ -7,7 +7,12 @@ const getAllFilesFormS3Bucket = async () => {
   };
   const result = await s3.listObjectsV2(params).promise();
 
-  return {};
+  return {
+    s3Information: result,
+    bucketUrl: result.Contents?.map((item) => {
+      return `${config.aws.s3.bucketUrl}/${item.Key}`;
+    }),
+  };
 };
 
 // if need one time image view link generation
