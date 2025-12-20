@@ -15,4 +15,6 @@ const getAllFilesFormS3Bucket = async () => {
   };
 };
 
+const getSingleFileFromS3Bucket = async (key: string) => {};
+
 // if need one time image view link generation
