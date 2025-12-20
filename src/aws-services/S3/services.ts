@@ -49,4 +49,3 @@ const deleteFileFromS3Bucket = async (key: string) => {
 };
 
 // if need one time image view link generation
-const generatePresignedUrl = async (key: string) => {};
