@@ -18,6 +18,12 @@ const sendOrderConfirmation = async (orderId: string) => {
   return result;
 };
 
+const sendSystemAlert = async (alertMessage: string) => {
+  const sns = new SNSService();
+  const result = await sns.sendSystemAlert(alertMessage);
+  return result;
+};
+
 export const SNSServices = {
   sendWelcomeMessage,
 };
