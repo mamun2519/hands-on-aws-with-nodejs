@@ -40,6 +40,7 @@ class SNSService {
         ],
       });
       const response = await this.client.send(command);
+      this.topicArn = response.TopicArn;
       return response;
     } catch (error) {
       console.error("Error creating topic:", error);
