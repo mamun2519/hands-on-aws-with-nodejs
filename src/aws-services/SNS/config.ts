@@ -48,5 +48,11 @@ class SNSService {
   // ============================================
   //  Subscribe Email to Topic
   // ============================================
-  async subscribeEmail(email: string) {}
+  async subscribeEmail(email: string) {
+    try {
+    } catch (error) {
+      console.error("Error subscribing email:", error);
+      throw new Error(`Failed to subscribe email: ${error}`);
+    }
+  }
 }
