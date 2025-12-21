@@ -17,9 +17,9 @@ export default {
     },
     // sns important details
     sns: {
-      accessKeyId: process.env.SNS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.SNS_SECRET_ACCESS_KEY,
-      region: process.env.SNS_REGION,
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      region: process.env.AWS_REGION,
       topicArn: process.env.SNS_TOPIC_ARN,
     },
   },
