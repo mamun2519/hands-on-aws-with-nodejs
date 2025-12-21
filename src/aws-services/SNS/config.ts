@@ -118,4 +118,11 @@ class SNSService {
       throw new Error(`Failed to publish message: ${error}`);
     }
   }
+
+  // ============================================
+  // 5. List All Subscriptions
+  // ============================================
+      async listSubscriptions() {
+
+      }
 }
