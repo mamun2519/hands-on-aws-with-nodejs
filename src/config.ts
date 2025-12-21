@@ -20,6 +20,7 @@ export default {
       accessKeyId: process.env.SNS_ACCESS_KEY_ID,
       secretAccessKey: process.env.SNS_SECRET_ACCESS_KEY,
       region: process.env.SNS_REGION,
-      topicArn: process.env.SNS_TOPIC_ARN,  
+      topicArn: process.env.SNS_TOPIC_ARN,
+    },
   },
 };
