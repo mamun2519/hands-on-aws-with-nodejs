@@ -18,6 +18,7 @@ const sendEmailUsingSNS = async (
   };
 
   const result = await SNS.publish(params).promise();
+
   return result;
 };
 
