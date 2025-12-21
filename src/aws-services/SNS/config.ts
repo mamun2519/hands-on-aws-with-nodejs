@@ -11,6 +11,7 @@ import {
 class SNSService {
   client: SNSClient;
   constructor() {
+    //  AWS SNS Configuration
     this.client = new SNSClient({
       region: config.aws.sns.region,
       credentials: {
@@ -18,5 +19,11 @@ class SNSService {
         secretAccessKey: config.aws.sns.secretAccessKey ?? "",
       },
     });
+  }
+
+  async createTopic(topicName: string) {
+    const command = new CreateTopicCommand({ Name: topicName });
+    const response = await this.client.send(command);
+    return response;
   }
 }
