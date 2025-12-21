@@ -45,4 +45,7 @@ class SNSService {
       throw new Error(`Failed to create topic: ${error}`);
     }
   }
+  // ============================================
+  // 2. Subscribe Email to Topic
+  // ============================================
 }
