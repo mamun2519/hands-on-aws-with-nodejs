@@ -8,7 +8,7 @@ import {
   UnsubscribeCommand,
 } from "@aws-sdk/client-sns";
 
-class SNSService {
+export default class SNSService {
   client: SNSClient;
   topicArn?: string;
   constructor() {
