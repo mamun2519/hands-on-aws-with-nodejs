@@ -10,4 +10,4 @@ router.post("/send-shipping-update", SNSController.sendShippingUpdate);
 router.post("/send-order-confirmation", SNSController.sendOrderConfirmation);
 router.post("/send-system-alert", SNSController.sendSystemAlert);
 
-export default router;
+export const SnsRouter = router;
