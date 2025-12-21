@@ -3,6 +3,7 @@ import { SNSController } from "./sns.controller";
 
 const router = express.Router();
 
+router.get("/list-subscriptions", SNSController.listSubscriptions);
 router.post("/subscribe", SNSController.addSubscriberToTopic);
 router.post("/unsubscribe", SNSController.unsubscribeFromTopic);
 router.post("/send-welcome", SNSController.sendWelcomeMessage);

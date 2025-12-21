@@ -78,4 +78,5 @@ export const SNSController = {
   sendShippingUpdate,
   sendOrderConfirmation,
   sendSystemAlert,
+  listSubscriptions,
 };
