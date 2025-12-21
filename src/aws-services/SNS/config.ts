@@ -66,6 +66,10 @@ class SNSService {
       throw new Error(`Failed to subscribe email: ${error}`);
     }
   }
+
+  // ============================================
+  //  Subscribe number to Topic
+  // ============================================
   async subscribeSns(phoneNumber: string) {
     try {
       if (!this.topicArn) {
@@ -83,4 +87,25 @@ class SNSService {
       throw new Error(`Failed to subscribe phone number: ${error}`);
     }
   }
-}
+
+  // ============================================
+  // 4. Publish Message (Production Function)
+  // ============================================
+      async publishMessage(subject: string, message: string , attribute = {}) {
+        try {
+          if (!this.topicArn) {
+            throw new Error("SNS Topic ARN is not configured.");
+          }
+          const command = new PublishCommand({
+            TopicArn: this.topicArn,
+            Subject: subject,
+            Message: message,
+            MessageAttributes: attribute,
+          });
+          const response = await this.client.send(command);
+          return response;
+        } catch (error) {
+          console.error("Error publishing message:", error);
+          throw new Error(`Failed to publish message: ${error}`);
+        }
+      }
