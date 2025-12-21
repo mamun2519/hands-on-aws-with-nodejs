@@ -27,6 +27,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@aws-sdk/client-sns": "^3.956.0",
     "aws-sdk": "^2.1693.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
