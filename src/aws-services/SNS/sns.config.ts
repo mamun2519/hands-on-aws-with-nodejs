@@ -20,11 +20,11 @@ export default class SNSService {
         secretAccessKey: config.aws.sns.secretAccessKey ?? "",
       },
     });
-    this.createTopic = config.aws.sns.topicArn
-      ? this.createTopic.bind(this)
-      : async () => {
-          throw new Error("SNS Topic ARN is not configured.");
-        };
+    this.topicArn = config.aws.sns.topicArn as string;
+    // ? this.createTopic.bind(this)
+    // : async () => {
+    //     throw new Error("SNS Topic ARN is not configured.");
+    //   };
   }
 
   // ============================================
