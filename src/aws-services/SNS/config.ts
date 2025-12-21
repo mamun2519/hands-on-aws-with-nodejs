@@ -164,4 +164,15 @@ class SNSService {
     const message = `Your order ID ${orderId} is now ${status}.`;
     return this.publishMessage(subject, message, { type: "shipping" });
   }
+
+//   system alert notification
+      async sendSystemAlert(alertMessage: string) {
+      const subject = "System Alert";
+      const message = `Alert: ${alertMessage}`;
+      return this.publishMessage(subject, message, {
+            alertType: "system",
+            priority: "critical",
+      });
+      }
+      
 }
