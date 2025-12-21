@@ -38,4 +38,9 @@ const sendSystemAlert = async (alertMessage: string) => {
 
 export const SNSServices = {
   sendWelcomeMessage,
+  addSubscriberToTopic,
+  unsubscribeFromTopic,
+  sendShippingUpdate,
+  sendOrderConfirmation,
+  sendSystemAlert,
 };
