@@ -30,14 +30,19 @@ class SNSService {
   // 1. Create SNS Topic
   // ============================================
   async createTopic(topicName: string) {
-    const command = new CreateTopicCommand({
-      Name: topicName,
-      Tags: [
-        { Key: "Environment", Value: "Production" },
-        { Key: "Project", Value: "NotificationSystem" },
-      ],
-    });
-    const response = await this.client.send(command);
-    return response;
+    try {
+      const command = new CreateTopicCommand({
+        Name: topicName,
+        Tags: [
+          { Key: "Environment", Value: "Production" },
+          { Key: "Project", Value: "NotificationSystem" },
+        ],
+      });
+      const response = await this.client.send(command);
+      return response;
+    } catch (error) {
+      console.error("Error creating topic:", error);
+      throw new Error(`Failed to create topic: ${error}`);
+    }
   }
 }
