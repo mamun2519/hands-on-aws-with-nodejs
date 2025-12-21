@@ -9,6 +9,7 @@ import {
 } from "@aws-sdk/client-sns";
 
 class SNSService {
+  client: SNSClient;
   constructor() {
     this.client = new SNSClient({
       region: config.aws.sns.region,
@@ -18,5 +19,4 @@ class SNSService {
       },
     });
   }
-    
 }
