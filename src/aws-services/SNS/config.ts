@@ -126,10 +126,21 @@ class SNSService {
     if (!this.topicArn) {
       throw new Error("SNS Topic ARN is not configured.");
     }
-      const command = new ListSubscriptionsByTopicCommand({ 
-            TopicArn: this.topicArn 
-      });
-      const response = await this.client.send(command);
-      return response;
+    const command = new ListSubscriptionsByTopicCommand({
+      TopicArn: this.topicArn,
+    });
+    const response = await this.client.send(command);
+    return response;
+  }
+
+  // ============================================
+  // 6. Unsubscribe
+  // ============================================
+  async unsubscribe(subscriptionArn: string) {
+    const command = new UnsubscribeCommand({
+      SubscriptionArn: subscriptionArn,
+    });
+    const response = await this.client.send(command);
+    return response;
   }
 }
