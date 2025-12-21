@@ -21,8 +21,17 @@ class SNSService {
     });
   }
 
+  // ============================================
+  // 1. Create SNS Topic (Production Setup)
+  // ============================================
   async createTopic(topicName: string) {
-    const command = new CreateTopicCommand({ Name: topicName });
+    const command = new CreateTopicCommand({
+      Name: topicName,
+      Tags: [
+        { Key: "Environment", Value: "Production" },
+        { Key: "Project", Value: "NotificationSystem" },
+      ],
+    });
     const response = await this.client.send(command);
     return response;
   }
