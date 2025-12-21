@@ -27,7 +27,7 @@ class SNSService {
   }
 
   // ============================================
-  // 1. Create SNS Topic
+  //  Create SNS Topic
   // ============================================
   async createTopic(topicName: string) {
     try {
@@ -46,6 +46,6 @@ class SNSService {
     }
   }
   // ============================================
-  // 2. Subscribe Email to Topic
+  //  Subscribe Email to Topic
   // ============================================
 }
