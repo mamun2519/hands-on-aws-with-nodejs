@@ -12,6 +12,12 @@ const sendShippingUpdate = async (orderId: string, status: string) => {
   return result;
 };
 
+const sendOrderConfirmation = async (orderId: string) => {
+  const sns = new SNSService();
+  const result = await sns.sendOrderConfirmation(orderId);
+  return result;
+};
+
 export const SNSServices = {
   sendWelcomeMessage,
 };
