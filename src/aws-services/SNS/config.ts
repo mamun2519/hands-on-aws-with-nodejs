@@ -48,4 +48,5 @@ class SNSService {
   // ============================================
   //  Subscribe Email to Topic
   // ============================================
+  async subscribeEmail(email: string) {}
 }
