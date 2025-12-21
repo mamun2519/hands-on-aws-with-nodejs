@@ -62,7 +62,14 @@ const sendSystemAlert = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Failed to send system alert", error });
   }
 };
-const s;
+const listSubscriptions = async (req: Request, res: Response) => {
+  try {
+    const result = await SNSServices.listSubscriptions();
+    res.status(200).json({ message: "Subscriptions listed", result });
+  } catch (error) {
+    res.status(500).json({ message: "Failed to list subscriptions", error });
+  }
+};
 
 export const SNSController = {
   addSubscriberToTopic,
