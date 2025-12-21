@@ -1,5 +1,17 @@
 import SNSService from "./config";
 
+const addSubscriberToTopic = async (email: string) => {
+  const sns = new SNSService();
+  const result = await sns.subscribeEmail(email);
+  return result;
+};
+
+const unsubscribeFromTopic = async (subscriptionArn: string) => {
+  const sns = new SNSService();
+  const result = await sns.unsubscribe(subscriptionArn);
+  return result;
+};
+
 const sendWelcomeMessage = async (userName: string, userEmail: string) => {
   const sns = new SNSService();
   const result = await sns.sendWelcomeMessage(userName, userEmail);
