@@ -6,6 +6,12 @@ const sendWelcomeMessage = async (userName: string, userEmail: string) => {
   return result;
 };
 
+const sendShippingUpdate = async (orderId: string, status: string) => {
+  const sns = new SNSService();
+  const result = await sns.sendShippingUpdate(orderId, status);
+  return result;
+};
+
 export const SNSServices = {
   sendWelcomeMessage,
 };
