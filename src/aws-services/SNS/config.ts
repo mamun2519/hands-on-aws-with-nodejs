@@ -159,20 +159,29 @@ class SNSService {
   }
 
   // Shipping Update Notification
-  async sendShippingUpdate( orderId: string, status: string) {
+  async sendShippingUpdate(orderId: string, status: string) {
     const subject = "Shipping Update";
     const message = `Your order ID ${orderId} is now ${status}.`;
     return this.publishMessage(subject, message, { type: "shipping" });
   }
 
-//   system alert notification
-      async sendSystemAlert(alertMessage: string) {
-      const subject = "System Alert";
-      const message = `Alert: ${alertMessage}`;
-      return this.publishMessage(subject, message, {
-            alertType: "system",
-            priority: "critical",
-      });
-      }
-      
+  //   system alert notification
+  async sendSystemAlert(alertMessage: string) {
+    const subject = "System Alert";
+    const message = `Alert: ${alertMessage}`;
+    return this.publishMessage(subject, message, {
+      alertType: "system",
+      priority: "critical",
+    });
+  }
+
+  // User Registration Welcome
+  async sendWelcomeMessage(userName: string, userEmail: string) {
+    const subject = "Welcome to Our Service!";
+    const message = `Hello ${userName}, welcome to our service! We're glad to have you on board.`;
+    return this.publishMessage(subject, message, {
+      userType: "new",
+      engagement: "welcome",
+    });
+  }
 }
