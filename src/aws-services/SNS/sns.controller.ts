@@ -62,6 +62,7 @@ const sendSystemAlert = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Failed to send system alert", error });
   }
 };
+const s;
 
 export const SNSController = {
   addSubscriberToTopic,

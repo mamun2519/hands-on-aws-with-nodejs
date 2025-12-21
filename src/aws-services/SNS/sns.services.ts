@@ -35,6 +35,11 @@ const sendSystemAlert = async (alertMessage: string) => {
   const result = await sns.sendSystemAlert(alertMessage);
   return result;
 };
+const listSubscriptions = async () => {
+  const sns = new SNSService();
+  const result = await sns.listSubscriptions();
+  return result;
+};
 
 export const SNSServices = {
   sendWelcomeMessage,
@@ -43,4 +48,5 @@ export const SNSServices = {
   sendShippingUpdate,
   sendOrderConfirmation,
   sendSystemAlert,
+  listSubscriptions,
 };
