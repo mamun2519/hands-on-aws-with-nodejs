@@ -66,4 +66,21 @@ class SNSService {
       throw new Error(`Failed to subscribe email: ${error}`);
     }
   }
+  async subscribeSns(phoneNumber: string) {
+    try {
+      if (!this.topicArn) {
+        throw new Error("SNS Topic ARN is not configured.");
+      }
+      const command = new SubscribeCommand({
+        Protocol: "sms",
+        TopicArn: this.topicArn,
+        Endpoint: phoneNumber,
+      });
+      const response = await this.client.send(command);
+      return response;
+    } catch (error) {
+      console.error("Error subscribing phone number:", error);
+      throw new Error(`Failed to subscribe phone number: ${error}`);
+    }
+  }
 }
