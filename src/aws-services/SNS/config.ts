@@ -122,7 +122,14 @@ class SNSService {
   // ============================================
   // 5. List All Subscriptions
   // ============================================
-      async listSubscriptions() {
-
-      }
+  async listSubscriptions() {
+    if (!this.topicArn) {
+      throw new Error("SNS Topic ARN is not configured.");
+    }
+      const command = new ListSubscriptionsByTopicCommand({ 
+            TopicArn: this.topicArn 
+      });
+      const response = await this.client.send(command);
+      return response;
+  }
 }
