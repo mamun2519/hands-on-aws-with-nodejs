@@ -1,4 +1,4 @@
-import SNSService from "./config";
+import SNSService from "./sns.config";
 
 const addSubscriberToTopic = async (email: string) => {
   const sns = new SNSService();
