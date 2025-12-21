@@ -149,14 +149,17 @@ class SNSService {
   // ============================================
 
   // Order Confirmation Notification
-  async sendOrderConfirmation(userEmail: string, orderId: string) {
+  async sendOrderConfirmation(orderId: string) {
     const subject = "Order Confirmation";
     const message = `Thank you for your order! Your order ID is ${orderId}.`;
-    return this.publishMessage(subject, message, { type: "order" });
+    return this.publishMessage(subject, message, {
+      orderType: "confirmation",
+      priority: "high",
+    });
   }
 
   // Shipping Update Notification
-  async sendShippingUpdate(userEmail: string, orderId: string, status: string) {
+  async sendShippingUpdate( orderId: string, status: string) {
     const subject = "Shipping Update";
     const message = `Your order ID ${orderId} is now ${status}.`;
     return this.publishMessage(subject, message, { type: "shipping" });
