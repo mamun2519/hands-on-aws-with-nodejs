@@ -178,7 +178,7 @@ class SNSService {
   // User Registration Welcome
   async sendWelcomeMessage(userName: string, userEmail: string) {
     const subject = "Welcome to Our Service!";
-    const message = `Hello ${userName}, welcome to our service! We're glad to have you on board.`;
+    const message = `Hello ${userName}, welcome to our service! We're glad to have you on board. Your account (${userEmail}) has been successfully created.`;
     return this.publishMessage(subject, message, {
       userType: "new",
       engagement: "welcome",
