@@ -10,6 +10,7 @@ import {
 
 class SNSService {
   client: SNSClient;
+  topicArn?: string;
   constructor() {
     //  AWS SNS Configuration
     this.client = new SNSClient({
@@ -50,6 +51,16 @@ class SNSService {
   // ============================================
   async subscribeEmail(email: string) {
     try {
+      if (!this.topicArn) {
+        throw new Error("SNS Topic ARN is not configured.");
+      }
+      const command = new SubscribeCommand({
+        Protocol: "email",
+        TopicArn: this.topicArn,
+        Endpoint: email,
+      });
+      const response = await this.client.send(command);
+      return response;
     } catch (error) {
       console.error("Error subscribing email:", error);
       throw new Error(`Failed to subscribe email: ${error}`);
