@@ -46,12 +46,18 @@ class SESConfig {
   }
 }
 
- //   email queue (Handle bulk email sending with queuing mechanism) if need you can use
+//   email queue (Handle bulk email sending with queuing mechanism) if need you can use
 class SESEmailQueue {
-      queue: Array<any>;
-      processing: number;
-      maxConcurrent: number;
+  queue: Array<any>;
+  processing: number;
+  maxConcurrent: number;
+  results: Array<any>;
   // Implementation for email queuing can be added here
-  constructor(){}
+  maxConcurrent: number;
+  constructor(maxConcurrent = 5) {
+    this.queue = [];
+    this.processing = 0;
+    this.maxConcurrent = maxConcurrent;
+    this.results = [];
+  }
 }
-
