@@ -44,4 +44,6 @@ class SESConfig {
       },
     });
   }
+
+  //   email queue (Handle bulk email sending later)
 }
