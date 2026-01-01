@@ -22,7 +22,7 @@ const getSingleS3File = async (req: Request, res: Response) => {
 
 const uploadS3File = async (req: Request, res: Response) => {
   const { key } = req.params;
-  const body = req.file?.buffer;
+  const body = req?.file?.buffer as any;
 
   if (!body) {
     return res.status(400).json({ message: "File is required" });
