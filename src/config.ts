@@ -23,7 +23,7 @@ export default {
       topicArn: process.env.SNS_TOPIC_ARN,
     },
     ses: {
-      formEmail: process.env.SES_FROM_EMAIL,
+      fromEmail: process.env.SES_FROM_EMAIL,
       forName: process.env.SES_FOR_NAME || "YourCompany",
     },
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,

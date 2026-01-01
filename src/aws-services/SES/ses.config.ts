@@ -1,6 +1,11 @@
 import config from "../../config";
 
 class SESConfig {
+  region: string;
+  accessKeyId: string;
+  secretAccessKey: string;
+  fromEmail: string;
+  forName: string;
   constructor() {
     // Configuration settings for AWS SES can be initialized here
     this.region = config.aws.region || "us-east-1";
