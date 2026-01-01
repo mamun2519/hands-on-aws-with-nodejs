@@ -1,3 +1,4 @@
+import { SESClient } from "@aws-sdk/client-ses";
 import config from "../../config";
 
 class SESConfig {
@@ -16,7 +17,7 @@ class SESConfig {
 
     this.validate();
   }
-   
+
   // validate configuration
   validate() {
     if (!this.region) {
@@ -33,13 +34,13 @@ class SESConfig {
     }
   }
 
-  getClient (){
-      return new SESClient({
-        region: this.region,
-        credentials: {
-          accessKeyId: this.accessKeyId,
-          secretAccessKey: this.secretAccessKey,
-        },
-      });   
+  getClient() {
+    return new SESClient({
+      region: this.region,
+      credentials: {
+        accessKeyId: this.accessKeyId,
+        secretAccessKey: this.secretAccessKey,
+      },
+    });
   }
 }
