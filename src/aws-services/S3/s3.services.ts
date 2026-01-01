@@ -64,4 +64,5 @@ export const S3Service = {
   getAllFilesFormS3Bucket,
   getSingleFileFromS3Bucket,
   uploadFileToS3Bucket,
+  deleteFileFromS3Bucket,
 };

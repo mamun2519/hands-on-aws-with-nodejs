@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { S3Service } from "./services";
+import { S3Service } from "./s3.services";
 
 const getAllS3Files = async (req: Request, res: Response) => {
   const result = await S3Service.getAllFilesFormS3Bucket();
