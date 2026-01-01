@@ -44,6 +44,6 @@ class SESConfig {
       },
     });
   }
-
-  //   email queue (Handle bulk email sending later)
 }
+
+ //   email queue (Handle bulk email sending with queuing mechanism) if need you can use
