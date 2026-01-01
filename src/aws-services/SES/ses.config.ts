@@ -8,5 +8,7 @@ class SESConfig {
     this.secretAccessKey = config.aws.secretAccessKey;
     this.fromEmail = config.aws.ses.fromEmail;
     this.forName = config.aws.ses.forName || "YourCompany";
+
+    this.validate();
   }
 }
