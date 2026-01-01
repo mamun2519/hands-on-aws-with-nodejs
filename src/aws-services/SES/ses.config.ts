@@ -53,7 +53,6 @@ class SESEmailQueue {
   maxConcurrent: number;
   results: Array<any>;
   // Implementation for email queuing can be added here
-  maxConcurrent: number;
   constructor(maxConcurrent = 5) {
     this.queue = [];
     this.processing = 0;
