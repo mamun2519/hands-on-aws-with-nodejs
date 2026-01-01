@@ -1,5 +1,5 @@
 import config from "../../config";
-import s3 from "./config";
+import s3 from "./s3.config";
 
 const getAllFilesFormS3Bucket = async () => {
   const params = {
