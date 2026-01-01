@@ -16,7 +16,8 @@ class SESConfig {
 
     this.validate();
   }
-
+   
+  // validate configuration
   validate() {
     if (!this.region) {
       throw new Error("SES region is not configured");
