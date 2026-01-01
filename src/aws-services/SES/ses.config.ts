@@ -59,4 +59,27 @@ class SESEmailQueue {
     this.maxConcurrent = maxConcurrent;
     this.results = [];
   }
+
+  add(EmailFunction: () => Promise<any>) {
+    this.queue.push(EmailFunction);
+    this.processNext();
+  }
+
+  private processNext() {
+    while (this.processing < this.maxConcurrent && this.queue.length > 0) {
+      const EmailFunction = this.queue.shift()!;
+      this.processing++;
+      EmailFunction()
+        .then((result) => {
+          this.results.push(result);
+        })
+        .catch((error) => {
+          this.results.push({ error });
+        })
+        .finally(() => {
+          this.processing--;
+          this.processNext();
+        });
+    }
+  }
 }
