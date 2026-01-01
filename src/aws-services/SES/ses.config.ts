@@ -11,4 +11,19 @@ class SESConfig {
 
     this.validate();
   }
+
+  validate() {
+    if (!this.region) {
+      throw new Error("SES region is not configured");
+    }
+    if (!this.accessKeyId) {
+      throw new Error("SES access key ID is not configured");
+    }
+    if (!this.secretAccessKey) {
+      throw new Error("SES secret access key is not configured");
+    }
+    if (!this.fromEmail) {
+      throw new Error("SES from email is not configured");
+    }
+  }
 }
