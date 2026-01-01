@@ -49,5 +49,6 @@ class SESConfig {
  //   email queue (Handle bulk email sending with queuing mechanism) if need you can use
 class SESEmailQueue {
   // Implementation for email queuing can be added here
+  constructor(){}
 }
 
