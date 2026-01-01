@@ -22,5 +22,9 @@ export default {
       region: process.env.SNS_TOPIC_REGION,
       topicArn: process.env.SNS_TOPIC_ARN,
     },
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.SNS_TOPIC_REGION,
+    topicArn: process.env.SNS_TOPIC_ARN,
   },
 };
