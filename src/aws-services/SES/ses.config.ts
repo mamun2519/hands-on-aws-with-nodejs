@@ -60,9 +60,11 @@ class SESEmailQueue {
     this.results = [];
   }
 
-  add(EmailFunction: () => Promise<any>) {
-    this.queue.push(EmailFunction);
-    this.processNext();
+  add(EmailFunction: () => Promise<any>, data: any) {
+    return new Promise((resolve, reject) => {
+      this.queue.push({ ...EmailFunction, data, resolve, reject });
+      this.processNext();
+    });
   }
 
   private processNext() {
