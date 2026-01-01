@@ -32,4 +32,14 @@ class SESConfig {
       throw new Error("SES from email is not configured");
     }
   }
+
+  getClient (){
+      return new SESClient({
+        region: this.region,
+        credentials: {
+          accessKeyId: this.accessKeyId,
+          secretAccessKey: this.secretAccessKey,
+        },
+      });   
+  }
 }
