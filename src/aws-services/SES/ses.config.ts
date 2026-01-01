@@ -34,6 +34,7 @@ class SESConfig {
     }
   }
 
+  //   generate client and retune
   getClient() {
     return new SESClient({
       region: this.region,
