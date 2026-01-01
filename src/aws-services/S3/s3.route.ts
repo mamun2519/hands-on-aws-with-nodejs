@@ -1,5 +1,5 @@
 import express from "express";
-import { S3Controller } from "./controller";
+import { S3Controller } from "./s3.controller";
 const router = express.Router();
 
 router.get("/s3-health", (req, res) => {
