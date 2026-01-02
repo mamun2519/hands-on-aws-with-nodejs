@@ -22,6 +22,7 @@ const getSingleS3File = async (req: Request, res: Response) => {
 
 const uploadS3File = async (req: Request, res: Response) => {
   const { key } = req.params;
+  // @typeing issue with multer file buffer
   const body = req?.file?.buffer as any;
 
   if (!body) {
