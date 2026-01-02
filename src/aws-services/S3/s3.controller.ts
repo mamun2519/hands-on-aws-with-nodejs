@@ -51,7 +51,7 @@ const generatePresignedUrl = async (req: Request, res: Response) => {
   const result = await S3Service.generatePresignedUrl(key);
 
   res.status(200).json({
-    message: "Presigned URL generated successfully",
+    message: "Presigned URL generated successfully.",
     data: result,
   });
 };
