@@ -1,6 +1,7 @@
 import config from "../../config";
 import s3 from "./s3.config";
 
+// S3 Service Methods
 const getAllFilesFormS3Bucket = async () => {
   const params = {
     Bucket: config.aws.s3.s3BucketName ?? "",
