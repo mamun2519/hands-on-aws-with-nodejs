@@ -5,7 +5,7 @@ const getAllS3Files = async (req: Request, res: Response) => {
   const result = await S3Service.getAllFilesFormS3Bucket();
 
   res.status(200).json({
-    message: "S3 Files fetched successfully.",
+    message: "S3 Files Retrieved successfully.",
     data: result,
   });
 };
