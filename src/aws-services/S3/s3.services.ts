@@ -41,6 +41,7 @@ const uploadFileToS3Bucket = async (
   return result;
 };
 
+// delete file from s3 bucket
 const deleteFileFromS3Bucket = async (key: string) => {
   const params = {
     Bucket: config.aws.s3.s3BucketName ?? "",
