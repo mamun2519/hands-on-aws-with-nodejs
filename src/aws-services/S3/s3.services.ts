@@ -16,6 +16,7 @@ const getAllFilesFormS3Bucket = async () => {
   };
 };
 
+// get single file from s3 bucket
 const getSingleFileFromS3Bucket = async (key: string) => {
   const params = {
     Bucket: config.aws.s3.s3BucketName ?? "",
