@@ -41,7 +41,7 @@ const deleteS3File = async (req: Request, res: Response) => {
   const result = await S3Service.deleteFileFromS3Bucket(key);
 
   res.status(200).json({
-    message: "File deleted successfully",
+    message: "File deleted successfully.",
     data: result,
   });
 };
