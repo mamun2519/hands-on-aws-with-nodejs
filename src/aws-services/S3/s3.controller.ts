@@ -15,7 +15,7 @@ const getSingleS3File = async (req: Request, res: Response) => {
   const result = await S3Service.getSingleFileFromS3Bucket(key);
 
   res.status(200).json({
-    message: "S3 File fetched successfully",
+    message: "S3 File retrieved successfully",
     data: result,
   });
 };
