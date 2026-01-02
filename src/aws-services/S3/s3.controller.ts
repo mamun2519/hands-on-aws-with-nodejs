@@ -31,7 +31,7 @@ const uploadS3File = async (req: Request, res: Response) => {
   const result = await S3Service.uploadFileToS3Bucket(key, body);
 
   res.status(200).json({
-    message: "File uploaded successfully",
+    message: "File uploaded successfully.",
     data: result,
   });
 };
