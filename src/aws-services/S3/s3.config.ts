@@ -5,7 +5,7 @@ import config from "../../config";
 const s3 = new AWS.S3({
   accessKeyId: config.aws.s3.accessKeyId ?? "",
   secretAccessKey: config.aws.s3.secretAccessKey ?? "",
-  region: config.aws.s3.region,
+  region: config.aws.s3.region ?? "us-east-1",
 });
 
 export default s3;
