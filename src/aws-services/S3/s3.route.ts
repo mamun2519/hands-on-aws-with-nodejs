@@ -1,7 +1,7 @@
 import express from "express";
 import { S3Controller } from "./s3.controller";
 const router = express.Router();
-
+//  health check route
 router.get("/s3-health", (req, res) => {
   res.send("S3 Service is healthy");
 });
