@@ -46,6 +46,7 @@ const deleteS3File = async (req: Request, res: Response) => {
   });
 };
 
+// if need one time image view link generation
 const generatePresignedUrl = async (req: Request, res: Response) => {
   const { key } = req.params;
   const result = await S3Service.generatePresignedUrl(key);
