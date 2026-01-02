@@ -27,6 +27,7 @@ const getSingleFileFromS3Bucket = async (key: string) => {
   return result;
 };
 
+// upload file to s3 bucket
 const uploadFileToS3Bucket = async (
   key: string,
   body: Buffer | Uint8Array | Blob | string
